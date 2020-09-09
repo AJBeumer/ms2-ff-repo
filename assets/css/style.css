@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Final-fantasy";
+    src: url("../fonts/Ferrum-wy99.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /*INDEX FILE*/
 
 body {
@@ -18,6 +26,7 @@ html, body {
 }
 
 h1 {
+    font-family: "Final-fantasy";
     font-size: 64px;
     margin: 0;
 }
@@ -42,5 +51,41 @@ h1 {
     color: rgba(255, 255, 255, .5);
 }
 
+#welcomeText, #introButton, #attackButtons {
+    display: block;
+}
 
+#bossFight {
+    display: none;
+}
 
+#finalBoss {
+    width: 240px;
+    height: 246px;
+    background-image: url("../images/final-boss-medium.png");
+    animation: moveX 1.5s steps(3) forwards;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+@keyframes moveX{
+    from{background-position-x:240px;}
+    to{background-position-x:-480px;}
+}
+
+@media only screen and (min-width: 600px) {
+    #finalBoss {
+        width: 480px;
+        height: 492px;
+        background-image: url("../images/final-boss-big.png");
+        animation: moveX 1.5s steps(3) forwards;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    @keyframes moveX{
+        from{background-position-x:480px;}
+        to{background-position-x:-960px;}
+    }
+}
