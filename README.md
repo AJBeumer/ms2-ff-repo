@@ -14,7 +14,7 @@ For Milestone Project 2 I created a wiki like web-application to create a portal
 
 
 
-[Visit my personal site here](INSERT LINK)
+[Visit my personal site here](https://ajbeumer.github.io/ms2-ff-repo/)
 <br>
 [Visit my GitHub repository here](https://github.com/AJBeumer/ms2-ff-repo)
 
