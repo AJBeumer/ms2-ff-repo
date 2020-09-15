@@ -105,9 +105,9 @@ For styling a minimalistic approach was chosen to give a clean look and put the 
 ### Wireframes
 Balsamiq is used to create wireframes of the site for desktop, tablet and mobile view.
 
-- [Landing page](assets/readme/landing_page.png) -> an outline of how the landing page should look like.
-- [Main pages and toggle](assets/readme/main-pages-toggle.png) -> an outline on how the main page should look like and how to browse between the 3 main pages.
-- [Sub-pages and menu](assets/readme/sub-pages-and-menu.png) -> an outline on how the submenu will look like with integration of menu.
+- [Landing page](assets/images/readme/landing_page.png) -> an outline of how the landing page should look like.
+- [Main pages and toggle](assets/images/readme/main-pages-toggle.png) -> an outline on how the main page should look like and how to browse between the 3 main pages.
+- [Sub-pages and menu](assets/images/readme/sub-pages-and-menu.png) -> an outline on how the submenu will look like with integration of menu.
 
 ### Developer and Business Purpose
 1. Demonstration of learned skills (HTML5/CSS/Bootstrap/JavaScript) throughout the first two modules
