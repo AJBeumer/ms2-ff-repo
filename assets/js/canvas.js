@@ -4,93 +4,77 @@ document.querySelector("#startFight").addEventListener("click", function () {
     document.querySelector("#introButton").style.display = "none";
 });
 
-// each player chooses a move
-// defense goes first (player then comp)
-// attacks go second (player then comp)
-// health gets minus as attacks land
 
-
-
-//Global variables >>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-let savedCompMove;
+// GLOBAL VARIABLES
+let savedDragonMove;
 let playerHealth = 100;
 let botHealth = 100;
 
-//Turn counters >>>>>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//Turn counters
 
 let totRounds = 0;
 
-//Document rewrites >>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//DOCUMENT VARIABLES
 
-let res;
-let playByPlay = document.getElementById('announcements');
+let sum;
+let playByPlay = document.getElementById('battleText');
 let playerHealthBar = document.getElementById('playerHealthBar');
 let botHealthBar = document.getElementById('botHealthBar');
 let attackButton = document.getElementById('attack');
 let counterButton = document.getElementById('counter');
 
-//Run on load >>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 function enableButtons() {
     attackButton.disabled = false;
     counterButton.disabled = false;
 }
 
-//Moves >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/* TURNS BOTH USER AS BOT*/
 
-
-//Shared Functions >>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-// triggers the fight in the HTML
+// HTML TRIGGER
 function fight(id) {
     addRound();
-    compMove(id);
-    healthChange();
+    dragonMove(id);
+    hpChange();
     gameOver();
 }
-// adds a round to the round counters
+// ROUND ADD FOR FUTURE IMPLEMENTATION
 function addRound() {
     totRounds += 1;
 }
 
-//adds the counter action to attack
+// COUNTER ACTION
 function counter(y, c) {
     let move = Math.floor((Math.random()*5));
     if (move >= 3 && y === 'attack') {
-        res = 'Computers counter was successful! You took 10 damage';
+        sum = 'The counter of the Dragon was a success! You took 10 damage';
         playerHealth -= 10;
     } else if (move >= 3 && y === 'counter') {
-        res = 'Your counter was successful! Comp took 10 damage';
+        sum = 'Your counter was successful! Dragon took 10 damage';
         botHealth -= 10;
     } else if (move < 3 && y === 'attack') {
-        res = 'Computer counter failed! You dealt 15 damage!';
+        sum = 'The counter of the Dragon failed! You dealt 15 damage!';
         botHealth -= 15;
     } else if (move < 3 && y === 'counter') {
-        res = 'Your counter was not successful! You were dealt 15 damage!';
+        sum = 'Your counter failed and you were dealt 15 damage!';
         playerHealth -= 15;
     }
 
 }
 
-function showAnnouncements() {
-    let Ann = document.getElementById('announcements');
-    Ann.style.display = "block";
+//BATTLE TEXT
+function showBattleText() {
+    let batText = document.getElementById('battleText');
+    batText.style.display = "block";
 }
 
 
 // Displays results of the round
-function roundResults(res) {
-    playByPlay.innerHTML = res + "<br>";
+function roundResults(sum) {
+    playByPlay.innerHTML = sum + "<br>";
 }
 
-function healthChange() {
+function hpChange() {
     playerHealthBar.style.width = playerHealth + "%";
     botHealthBar.style.width =  botHealth + "%";
 
@@ -125,16 +109,16 @@ function healthChange() {
 
 function gameOver() {
     if (playerHealth === 0 && botHealth === 0) {
-        res = 'Its a tie!';
-        roundResults(res);
+        sum = 'Its a tie!';
+        roundResults(sum);
         attackButton.disabled = true;
         counterButton.disabled = true;
 
     }
 
     if (playerHealth === 0) {
-        res = 'You died. Press f5 and try again!';
-        roundResults(res);
+        sum = 'You died. Press f5 and try again!';
+        roundResults(sum);
         attackButton.disabled = true;
         counterButton.disabled = true;
 
@@ -151,27 +135,25 @@ function gameOver() {
     }
 }
 
-//The Game >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-// Takes the moves of the player and generates one for the comp and then runs the damage step
-function compMove(id) {
+// PLAYER MOVE AND AFTER DRAGON MOVE FUNCTION
+function dragonMove(id) {
     let move = Math.floor((Math.random()*4)+1);
     if (move <= 3) {
-        savedCompMove =  'attack';
+        savedDragonMove =  'attack';
     } else {
-        savedCompMove = 'counter';
+        savedDragonMove = 'counter';
     }
-    res = ('your move is <span>'+ id + '</span> and the computers move is <span>' + savedCompMove + '</span> on round ' + totRounds);
-    damageStep(id, savedCompMove);
-    roundResults(res);
+    sum = ('player move <span>'+ id + '</span> and move of the dragon <span>' + savedDragonMove + '</span> in fight ' + totRounds);
+    damageStep(id, savedDragonMove);
+    roundResults(sum);
 
 }
 
-//processes the moves to a result
+//PROCESSING OF MOVES
 function damageStep(y, c) {
     if ( y === 'attack' && c === 'attack') {
-        res = 'Both players took damage';
+        sum = 'Both are damaged!';
         if (botHealth >= 10 && playerHealth >= 10) {
             botHealth -= 10;
             playerHealth -= 10;
@@ -180,12 +162,12 @@ function damageStep(y, c) {
             playerHealth = 0;
         }
     } else if ( y === 'counter' && c === 'counter') {
-        res = 'Defensive stances taken in vain';
+        sum = 'Your defence fell!';
     } else if ( y === 'attack' && c === 'counter') {
-        res = 'Comp took a defensive stance and prepares to counter';
+        sum = 'Dragon looks defensive and is preparing for a counter attack.';
         counter(y, c);
     } else if ( y === 'counter' && c === 'attack') {
-        res = 'You took a defensive stance and prepare to counter';
+        sum = 'You took a defensive stance and prepare to counter';
         counter(y, c);
     }
 }
