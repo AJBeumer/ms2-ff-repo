@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <title>FF Data</title>
 </head>
-<body class="text-center">
+<body>
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <main role="main" class="inner cover mt-auto">
+    <main class="inner cover mt-auto">
         <h1 class="cover-heading">Final Fantasy</h1>
         <p class="lead" id="welcomeText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -39,29 +39,27 @@
                 <div id="playerHealthBar"></div>
             </div>
             <div class="row" id="attackButtonRow">
-                <button class="ff7-button" id="attack" onClick="fight(id); showAnnouncements();">Attack</button>
-                <button class="ff7-button" id="counter" onClick="fight(id); showAnnouncements()">Counter</button>
+                <button class="ff7-button" id="attack" onClick="fight(id); showBattleText();">Attack</button>
+                <button class="ff7-button" id="counter" onClick="fight(id); showBattleText()">Counter</button>
             </div>
-            <div id="announcements"></div>
+            <div id="battleText"></div>
         </div>
 
         <div id="enterSite">
-            <div class="ff7">
+            <div class="ff7-modal">
                 <h1>Cloud</h1>
                 <p>&ldquo;Thank you. I think my burden has lightened. &rdquo;</p>
             </div>
-            <a href="content-index.html">
-                <button class="ff7-button">Enter Site</button>
-            </a>
+                <button class="ff7-button" onclick="window.location.href='content-index.html'">Enter Site</button>
         </div>
         <div id="introButton">
-            <button id="startFight" type="button" class="btn btn-primary ff7-button" data-toggle="modal"
+            <button id="startFight" type="button" class="ff7-button" data-toggle="modal"
                     data-target="#exampleModal">Enter site
             </button>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="ff7">
+                <div class="ff7-modal">
                     <h1>Cloud</h1>
                     <p>&ldquo;Before you enter the portal of wisdom you need to prove your worth. Defeat the dragon and
                         gain everything!&rdquo;</p>
@@ -69,18 +67,18 @@
             </div>
         </div>
     </main>
-    <footer class="mastfoot mt-auto">
+    <footer class="footer mt-auto">
         <div class="inner">
-            <p>AJ RULEZ</p>
+            <small>Copyright &copy; AJ Beumer</small>
         </div>
     </footer>
 </div>
 
-
-</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/canvas.js"></script>
+
+</body>
 </html>
 

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -16,7 +16,7 @@
 </head>
 <body class="text-center">
 <div class="cover-container d-flex h-100 mx-auto flex-column">
-    <main role="main">
+    <main>
         <nav class="navbar navbar-expand-lg custom-bg-primary resource-nav">
             <div class="navbar-toggler d-block d-sm-block d-md-block d-lg-none">
                 <div onclick="toggleMobileResourceNavigation()"><i class="fas fa-bars"></i></div>
@@ -30,9 +30,9 @@
                        data-toggle="dropdown"
                        href="#" id="navbarDropdownMenuLink" role="button">Final Fantasy Games</a>
                     <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                        <div class="dropdown-item" href="#" onclick="changeProgram('main-series')">Main Series</div>
+                        <div class="dropdown-item" onclick="changeProgram('main-series')">Main Series</div>
                         <div class="dropdown-item" onclick="changeProgram('tactics')">Tactics</div>
-                        <div class="dropdown-item" href="#" onclick="changeProgram('spin-offs')">Spin-offs</div>
+                        <div class="dropdown-item" onclick="changeProgram('spin-offs')">Spin-offs</div>
                     </div>
                 </li>
             </ul>
@@ -47,8 +47,8 @@
                             <div aria-controls="navbarToggleExternalContent" aria-expanded="false"
                                  aria-label="Toggle navigation"
                                  class="navbar-toggler program-select custom-bg-primary dropdown-toggle"
-                                 data-target="#navbarToggleExternalContent" data-toggle="collapse"
-                                 type="button">Final Fantasy
+                                 data-target="#navbarToggleExternalContent" data-toggle="collapse" role="button">Final
+                                Fantasy
                             </div>
                             <div class="program-dropdown collapse custom-bg-primary-selected"
                                  id="navbarToggleExternalContent">
@@ -61,227 +61,84 @@
                             </div>
                         </div>
 
-                        <ul class="nav flex-column nav-resource-container">
+                        <nav class="nav flex-column nav-resource-container">
                             <div id="tactics-resource-menu">
-                                <!-- Topics -->
+                                <!-- GAMES -->
                                 <div>
                                     <div class="tactics-resource-menu-main resource-menu-main">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">GAMES</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'tactics-resource-menu-learner')">
                                                 Final Fantasy Tactics
                                                 <i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'tactics-resource-menu-learningAndTeaching')">
                                                 Final Fantasy Tactics A2<i class="fas fa-chevron-right"></i></div>
-                                        </li>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Final Fantasy Tactics -->
+
                                 <div>
                                     <div class="tactics-resource-menu-learner resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 GAMES
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">FINAL FANTASY TACTICS</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Learner agency
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`tactics-finalFantasyTactics-general`)">
+                                                General
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Early learner</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Learner profile
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`tactics-finalFantasyTactics-gameplay`)">
+                                                Gameplay
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Action</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Exhibition</div>
-                                        </li>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`tactics-finalFantasyTactics-plot`)">Plot
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Final Fantasy Tactics A2 -->
                                 <div>
                                     <div class="tactics-resource-menu-learningAndTeaching resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 GAMES
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">FINAL FANTASY TACTICS A2</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Transdisciplinary
-                                                learning
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`tactics-finalFantasyTacticsA2-general`)">General
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu"
-                                                 onclick="openResourceMenu(this, 'tactics-resource-menu-learningAndTeaching-approachesToLearning')">
-                                                Approaches to learning <i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Inquiry</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Concepts</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu"
-                                                 onclick="openResourceMenu(this, 'tactics-resource-menu-learningAndTeaching-programmeOfInquiry')">
-                                                Programme of inquiry <i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Unit of inquiry
-                                                planners
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`tactics-finalFantasyTacticsA2-gameplay`)">Gameplay</div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`tactics-finalFantasyTacticsA2-plot`)">Plot
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu"
-                                                 onclick="openResourceMenu(this, 'tactics-resource-menu-learningAndTeaching-assessment')">
-                                                Assesment <i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu"
-                                                 onclick="openResourceMenu(this, 'tactics-resource-menu-learningAndTeaching-language')">
-                                                Language <i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                    </div>
-
-                                    <div class="tactics-resource-menu-learningAndTeaching-approachesToLearning resource-menu">
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu-back"
-                                                 onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
-                                                LEARNING
-                                                AND TEACHING
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link nav-title">APPROACHES TO LEARNING</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource"
-                                                 onclick="openResourceCardList('tactics-learningAndTeaching-approachesToLearning-communicationSkills')">
-                                                Communication skills
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Self-management
-                                                skills
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Thinking skills
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Research skills
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Social skills</div>
-                                        </li>
-                                    </div>
-
-                                    <div class="tactics-resource-menu-learningAndTeaching-programmeOfInquiry resource-menu">
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu-back"
-                                                 onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
-                                                LEARNING
-                                                AND TEACHING
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link nav-title">PROGRAMME OF INQUIRY</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Who we are</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Where we are in
-                                                place and
-                                                time
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">How we express
-                                                ourselves
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">How the world
-                                                works
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">How we organize
-                                                oursleves
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Sharing the
-                                                planet
-                                            </div>
-                                        </li>
-                                    </div>
-
-                                    <div class="tactics-resource-menu-learningAndTeaching-assessment resource-menu">
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu-back"
-                                                 onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
-                                                LEARNING
-                                                AND TEACHING
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link nav-title">ASSESSMENT</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Monitoring</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Documenting</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Measuring</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Reporting</div>
-                                        </li>
-                                    </div>
-
-                                    <div class="tactics-resource-menu-learningAndTeaching-language resource-menu">
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-menu-back"
-                                                 onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
-                                                LEARNING
-                                                AND TEACHING
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link nav-title">LANGUAGE</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource">Translanguaging
-                                            </div>
-                                        </li>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -290,11 +147,11 @@
 
                             <div id="spin-offs-resource-menu">
                                 <div class="tactics-resource-menu-main resource-menu-main">
-                                    <li class="nav-item">
+                                    <div class="nav-item">
                                         <div class="nav-link nav-title">There are currently no resources for the
                                             spin-offs
                                         </div>
-                                    </li>
+                                    </div>
                                 </div>
                             </div>
 
@@ -302,24 +159,24 @@
                                 <!-- GAMES -->
                                 <div>
                                     <div class="main-series-resource-menu-main resource-menu-main">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">GAMES</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyVII')">
                                                 Final Fantasy VII <i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXIV')">
                                                 Final Fantasy XIV: ARR <i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXV')">
                                                 Final Fantasy XV <i class="fas fa-chevron-right"></i></div>
-                                        </li>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -327,141 +184,141 @@
                                 <!-- FF7 TOPICS MENU-->
                                 <div>
                                     <div class="main-series-resource-menu-finalFantasyVII resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 GAMES
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">Final Fantasy VII</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-general`)">
                                                 General
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyVII-world')">
                                                 World<i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyVII-characters')">
                                                 Characters<i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyVII-music')">
                                                 Music<i class="fas fa-chevron-right"></i></div>
-                                        </li>
+                                        </div>
                                     </div>
 
                                     <!-- FF7 WORLD MENU -->
                                     <div class="main-series-resource-menu-finalFantasyVII-world resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 Final Fantasy VII
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">WORLD</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-continents`)">
                                                 Continents
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-cities`)">
                                                 Cities
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-dungeons`)">
                                                 Dungeons
                                             </div>
-                                        </li>
+                                        </div>
                                     </div>
 
                                     <!-- FF7 CHARACTERS MENU -->
                                     <div class="main-series-resource-menu-finalFantasyVII-characters resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 FINAL FANTASY VII
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">CHARACTERS</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-main-characters`)">
                                                 Main Characters
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-villains`)">
                                                 Villains
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-minor-characters`)">
                                                 Minor Characters
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-other-characters`)">
                                                 Other Characters
                                             </div>
-                                        </li>
+                                        </div>
                                     </div>
 
                                     <!-- FF7 MUSIC MENU -->
                                     <div class="main-series-resource-menu-finalFantasyVII-music resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 FINAL FANTASY VII
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">MUSIC</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-music-disk1`)">
                                                 Disk 1
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-music-disk2`)">
                                                 Disk 2
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-music-disk3`)">
                                                 Disk 3
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyVII-music-disk4`)">
                                                 Disk 4
                                             </div>
-                                        </li>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -469,255 +326,286 @@
                                 <!-- FFXIV TOPICS MENU-->
                                 <div>
                                     <div class="main-series-resource-menu-finalFantasyXIV resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 GAMES
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">Final Fantasy XIV:ARR</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-general`)">
                                                 General
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXIV-world')">
                                                 World<i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXIV-characters')">
                                                 Characters<i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXIV-music')">
                                                 Music<i class="fas fa-chevron-right"></i></div>
-                                        </li>
+                                        </div>
                                     </div>
 
                                     <!-- FFXIV WORLD MENU-->
                                     <div class="main-series-resource-menu-finalFantasyXIV-world resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 Final Fantasy XIV:ARR
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">WORLD</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-continents`)">
                                                 Continents
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-cities`)">
                                                 Cities
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-dungeons`)">
                                                 Dungeons
                                             </div>
-                                        </li>
+                                        </div>
                                     </div>
 
                                     <!-- FFXIV CHARACTERS MENU-->
                                     <div class="main-series-resource-menu-finalFantasyXIV-characters resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 FINAL FANTASY XIV:ARR
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">CHARACTERS</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-main-characters`)">
                                                 Main Characters
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-villains`)">
                                                 Villains
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-minor-characters`)">
                                                 Minor Characters
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-other-characters`)">
                                                 Other Characters
                                             </div>
-                                        </li>
+                                        </div>
                                     </div>
 
                                     <!-- FFXIV MUSIC MENU-->
                                     <div class="main-series-resource-menu-finalFantasyXIV-music resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 FINAL FANTASY XIV:ARR
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">MUSIC</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-music-disk1`)">
                                                 Disk 1
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-music-disk2`)">
                                                 Disk 2
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-music-disk3`)">
                                                 Disk 3
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXIV-music-disk4`)">
                                                 Disk 4
                                             </div>
-                                        </li>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Final Fantasy XV -->
+                                <!-- FFXV TOPICS MENU-->
                                 <div>
                                     <div class="main-series-resource-menu-finalFantasyXV resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 GAMES
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">Final Fantasy XV</div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-resource"
                                                  onclick="openResourceCardList(`main-series-finalFantasyXV-general`)">
                                                 General
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXV-world')">
                                                 World<i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXV-characters')">
                                                 Characters<i class="fas fa-chevron-right"></i></div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu"
                                                  onclick="openResourceMenu(this, 'main-series-resource-menu-finalFantasyXV-music')">
                                                 Music<i class="fas fa-chevron-right"></i></div>
-                                        </li>
+                                        </div>
                                     </div>
 
                                     <div class="main-series-resource-menu-finalFantasyXV-world resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 Final Fantasy XV
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">WORLD</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-continents`)">Continents</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-cities`)">Cities</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-dungeons`)">Dungeons</div>
-                                        </li>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-continents`)">
+                                                Continents
+                                            </div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-cities`)">
+                                                Cities
+                                            </div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-dungeons`)">
+                                                Dungeons
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="main-series-resource-menu-finalFantasyXV-characters resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 FINAL FANTASY XV
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">CHARACTERS</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-main-characters`)">Main Characters
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-main-characters`)">
+                                                Main Characters
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-villains`)">Villains</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-minor-characters`)">Minor Characters
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-villains`)">
+                                                Villains
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-other-characters`)">Other Characters
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-minor-characters`)">
+                                                Minor Characters
                                             </div>
-                                        </li>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-other-characters`)">
+                                                Other Characters
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="main-series-resource-menu-finalFantasyXV-music resource-menu">
-                                        <li class="nav-item">
+                                        <div class="nav-item">
                                             <div class="nav-link text-dark nav-element nav-menu-back"
                                                  onclick="returnResourceMenu(this)"><i class="fas fa-arrow-left"></i>
                                                 FINAL FANTASY XV
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </div>
+                                        <div class="nav-item">
                                             <div class="nav-link nav-title">MUSIC</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk1`)">Disk 1</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk2`)">Disk 2</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk3`)">Disk 3</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link text-dark nav-element nav-resource" onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk4`)">Disk 4</div>
-                                        </li>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk1`)">
+                                                Disk 1
+                                            </div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk2`)">
+                                                Disk 2
+                                            </div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk3`)">
+                                                Disk 3
+                                            </div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link text-dark nav-element nav-resource"
+                                                 onclick="openResourceCardList(`main-series-finalFantasyXV-music-disk4`)">
+                                                Disk 4
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
 
 
-                        </ul>
+                        </nav>
                     </nav>
                     <div class="mobile-nav-slice" onclick="toggleMobileResourceNavigation()"></div>
                 </div>
@@ -819,14 +707,14 @@
                         </div>
                         <div class="row resource-cards">
                             <div class="col-12 section-column">
-                                <div class="resourcemain">
+                                <div class="resourceMain">
 
-                                    <div class="resourceheader">
-                                        <h2 class="resourceheader h2">
+                                    <div class="resourceHeader">
+                                        <h2 class="resourceHeaderH2">
                                             Final Fantasy VII
                                         </h2>
                                     </div>
-                                    <div class="resourcebody">
+                                    <div class="resourceBody">
                                         <p>Final Fantasy VII[a] is a 1997 role-playing video game developed by Square
                                             for
                                             the PlayStation console. It is the seventh installment in the Final Fantasy
@@ -904,7 +792,8 @@
                             <a href="https://finalfantasy.neoseeker.com/wiki/Gaia_(FFVII)#Eastern_Continent"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg"
+                                         alt="continent">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Eastern Continent</h5>
@@ -914,7 +803,8 @@
                             <a href="https://finalfantasy.neoseeker.com/wiki/Gaia_(FFVII)#Western_Continent"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg"
+                                         alt="continent">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Western Continent</h5>
@@ -924,7 +814,8 @@
                             <a href="https://finalfantasy.neoseeker.com/wiki/Gaia_(FFVII)#Northern_Continent"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg"
+                                         alt="continent">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Northern Continent</h5>
@@ -1023,7 +914,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Mako_Reactor_1" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-1.png">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-1.png"
+                                         alt="Mako Reactor 1">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mako Reactor 1</h5>
@@ -1033,7 +925,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Mako_Reactor_5" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-5.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-5.jpg"
+                                         alt="Mako Reactor 5">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mako Reactor 5</h5>
@@ -1043,7 +936,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Train_Graveyard" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-train.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-train.jpg"
+                                         alt="Train Graveyard">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Train Graveyard</h5>
@@ -1053,7 +947,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Shinra_Building" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-shinra.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-shinra.jpg"
+                                         alt="Shinra Building">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Shinra Building</h5>
@@ -1063,7 +958,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Mythril_Mine_(Final_Fantasy_VII)"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-mythril.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-mythril.jpg"
+                                         alt="Mythril Mine">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mythril Mine</h5>
@@ -1073,7 +969,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Temple_of_the_Ancients" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-temple.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-temple.jpg"
+                                         alt="Temple of the Ancients">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Temple of the Ancients</h5>
@@ -1095,7 +992,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/cloud-strife/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-cloud-strife.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-cloud-strife.jpg"
+                                         alt="Cloud Strife">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Cloud Strife</h5>
@@ -1105,7 +1003,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/aerith-gainsborough/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-aerith-gainsborough.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-aerith-gainsborough.jpg"
+                                         alt="Aerith Gainsborough">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Aerith Gainsborough</h5>
@@ -1115,7 +1014,8 @@
                             <a href="hhttps://www.finalfantasyunion.com/characters/tifa-lockhart/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-tifa-lockhart.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-tifa-lockhart.jpg"
+                                         alt="Tifa Lockhart">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Tifa Lockhart</h5>
@@ -1125,7 +1025,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/barret-wallace/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-barret-wallace.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-barret-wallace.jpg"
+                                         alt="Barret Wallace">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Barret Wallace</h5>
@@ -1135,7 +1036,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/cid-highwind/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-cid-highwind.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-cid-highwind.jpg"
+                                         alt="Cid Highwind">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Cid Highwind</h5>
@@ -1145,7 +1047,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/red-xiii/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-red-xiii.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-red-xiii.jpg" alt="Red XIII">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Red XIII</h5>
@@ -1155,7 +1057,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/cait-sith/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-cait-sith.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-cait-sith.jpg"
+                                         alt="Cait Sith">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Cait Sith</h5>
@@ -1165,7 +1068,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/yuffie-kisaragi/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-yuffie-kisaragi.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-yuffie-kisaragi.jpg"
+                                         alt="Yuffie Kisaragi">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Yuffie Kisaragi</h5>
@@ -1175,7 +1079,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/vincent-valentine/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-vincent-valentine.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-vincent-valentine.jpg"
+                                         alt="Vincent Valentine">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Vincent Valentine</h5>
@@ -1196,7 +1101,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/sephiroth/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-sephiroth.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-sephiroth.jpg"
+                                         alt="Sephirot">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Sephiroth</h5>
@@ -1206,7 +1112,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/jenova/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-jenova.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-jenova.jpg" alt="Jenova">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">JENOVA</h5>
@@ -1216,7 +1122,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/professor-hojo/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-professor-hojo.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-professor-hojo.jpg"
+                                         alt="Professor Hojo">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Professor Hojo</h5>
@@ -1226,7 +1133,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/elena/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-elena.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-elena.jpg" alt="Elena">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Elena</h5>
@@ -1236,7 +1143,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/president-shinra/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-president-shinra.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-president-shinra.jpg"
+                                         alt="President Shinra">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">President Shinra</h5>
@@ -1246,7 +1154,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/rufus-shinra/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-rufus-shinra.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-rufus-shinra.jpg"
+                                         alt="Rufus Shinra">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Rufus Shinra</h5>
@@ -1256,7 +1165,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/tseng/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-tseng.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-tseng.jpg" alt="Tseng">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Tseng</h5>
@@ -1266,7 +1175,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/reno/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-reno.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-reno.jpg" alt="Reno">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Reno</h5>
@@ -1276,7 +1185,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/rude/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-rude.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-rude.jpg" alt="Rude">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Rude</h5>
@@ -1297,7 +1206,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/reeve-tuesti/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-reeve-tuesti.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-reeve-tuesti.jpg"
+                                         alt="Reeve Tuesti">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Reeve Tuesti</h5>
@@ -1307,7 +1217,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/scarlet/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-scarlet.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-scarlet.jpg" alt="Scarlet">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Scarlet</h5>
@@ -1317,7 +1227,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/heidegger/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-heidegger.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-heidegger.jpg"
+                                         alt="Heidegger">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Heidegger</h5>
@@ -1327,7 +1238,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/palmer/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-palmer.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-palmer.jpg" alt="Palmer">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Palmer</h5>
@@ -1337,7 +1248,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/lucrecia-crescent/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-lucrecia-crescent.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-lucrecia-crescent.jpg"
+                                         alt="Lucrecia Crescent">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Lucrecia Crescent</h5>
@@ -1347,7 +1259,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/professor-gast/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-professor-gast.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-professor-gast.jpg"
+                                         alt="Professor Gast">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Professor Gast</h5>
@@ -1357,7 +1270,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/mayor-domino/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-mayor-domino.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-mayor-domino.jpg"
+                                         alt="Mayor Domino">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mayor Domino</h5>
@@ -1367,7 +1281,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/zack-fair/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-zack-fair.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-zack-fair.jpg"
+                                         alt="Zack Fair">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Zack Fair</h5>
@@ -1377,7 +1292,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/sapphire-weapon/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-sapphire-weapon.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-sapphire-weapon.jpg"
+                                         alt="Sapphire Weapon">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Sapphire Weapon</h5>
@@ -1398,7 +1314,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/bugenhagen/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-bugenhagen.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-bugenhagen.jpg"
+                                         alt="Bugenhagen">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Bugenhagen</h5>
@@ -1408,7 +1325,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/chocobo-sage/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-chocobo-sage.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-chocobo-sage.jpg"
+                                         alt="Chocobo Sage">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Chocobo Sage</h5>
@@ -1418,7 +1336,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/dio/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dio.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dio.jpg" alt="Dio">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Dio</h5>
@@ -1428,7 +1346,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/don-corneo/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-don-corneo.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-don-corneo.jpg"
+                                         alt="Don Corneo">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Don Corneo</h5>
@@ -1438,7 +1357,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/dyne/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dyne.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dyne.jpg" alt="Dyne">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Dyne</h5>
@@ -1448,7 +1367,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/ester/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-ester.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-ester.jpg" alt="Ester">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Ester</h5>
@@ -1458,7 +1377,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/godo-kisaragi/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-godo-kisaragi.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-godo-kisaragi.jpg"
+                                         alt="Godo Kisaragi">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Godo Kisaragi</h5>
@@ -1468,7 +1388,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/marlene-wallace/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-marlene-wallace.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-marlene-wallace.jpg"
+                                         alt="Marlene Wallace">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Marlene Wallace</h5>
@@ -1478,7 +1399,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/zangan/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-zangan.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-zangan.jpg" alt="Zangen">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Zangan</h5>
@@ -1499,7 +1420,7 @@
                         <div class="row resource-cards">
                             <a href="https://www.youtube.com/watch?v=oVcjuJRSgVQ" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Prelude - Reunion</h5>
@@ -1508,7 +1429,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=p3jkXBqg9_k" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Tifa's Theme - Seventh Heaven</h5>
@@ -1517,7 +1438,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=p5N0jo_pJN8" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Main Theme of FFVII - Sector 7 Undercity</h5>
@@ -1526,7 +1447,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=oVcjuJRSgVQ" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Prelude - Reunion</h5>
@@ -1546,7 +1467,7 @@
                         <div class="row resource-cards">
                             <a href="https://www.youtube.com/watch?v=YM1-oniaYnc" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Jessie's Theme</h5>
@@ -1555,7 +1476,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=cdxKqHbsdyk" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Main Theme of FFVII - Nightfall in the Undercity</h5>
@@ -1564,7 +1485,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=OwK1sDqvd70" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Whispers' Theme</h5>
@@ -1573,7 +1494,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=3rEzFkNbWEw" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Star of Seventh Heaven</h5>
@@ -1593,7 +1514,7 @@
                         <div class="row resource-cards">
                             <a href="https://www.youtube.com/watch?v=lhb2ePyiIB4" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Flowers Blooming in the Church</h5>
@@ -1602,7 +1523,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=GRurDi9MA_8" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Aerith's Theme - Home Again</h5>
@@ -1611,7 +1532,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=YCxeP-M1rro" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Undercity Suns</h5>
@@ -1620,7 +1541,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=UECVhMkVFYk" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Turks' Theme</h5>
@@ -1640,7 +1561,7 @@
                         <div class="row resource-cards">
                             <a href="https://www.youtube.com/watch?v=IF6jz-A9fsc" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Oppressed - Beck's Badasses</h5>
@@ -1649,7 +1570,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=FBGZWpcAPSQ" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Wall Market - The Town That Never Sleeps</h5>
@@ -1658,7 +1579,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=0hB1OyOEak8" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Wall Market - Chocobo Sam</h5>
@@ -1667,7 +1588,7 @@
                             </a>
                             <a href="https://www.youtube.com/watch?v=yUjtjkgALFA" target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg" alt="music image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Funk with Me</h5>
@@ -1688,14 +1609,14 @@
                         </div>
                         <div class="row resource-cards">
                             <div class="col-12 section-column">
-                                <div class="resourcemain">
+                                <div class="resourceMain">
 
-                                    <div class="resourceheader">
-                                        <h2 class="resourceheader h2">
+                                    <div class="resourceHeader">
+                                        <h2 class="resourceHeaderH2">
                                             Final Fantasy XIV
                                         </h2>
                                     </div>
-                                    <div class="resourcebody">
+                                    <div class="resourceBody">
                                         <p>Final Fantasy XIV is a massively multiplayer online role-playing game
                                             (MMORPG) developed and published by Square Enix. Directed and produced by
                                             Naoki
@@ -1765,7 +1686,8 @@
                             <a href="https://finalfantasy.neoseeker.com/wiki/Gaia_(FFVII)#Eastern_Continent"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg"
+                                         alt="continents">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Eastern Continent</h5>
@@ -1775,7 +1697,8 @@
                             <a href="https://finalfantasy.neoseeker.com/wiki/Gaia_(FFVII)#Western_Continent"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg"
+                                         alt="continents">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Western Continent</h5>
@@ -1785,7 +1708,8 @@
                             <a href="https://finalfantasy.neoseeker.com/wiki/Gaia_(FFVII)#Northern_Continent"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-continent-map.jpg"
+                                         alt="continents">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Northern Continent</h5>
@@ -1886,7 +1810,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Mako_Reactor_1" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-1.png">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-1.png"
+                                         alt="Mako Reactor 1">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mako Reactor 1</h5>
@@ -1896,7 +1821,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Mako_Reactor_5" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-5.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-mako-5.jpg"
+                                         alt="Mako Reactor 5">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mako Reactor 5</h5>
@@ -1906,7 +1832,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Train_Graveyard" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-train.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-train.jpg"
+                                         alt="Train Graveyard">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Train Graveyard</h5>
@@ -1916,7 +1843,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Shinra_Building" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-shinra.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-shinra.jpg"
+                                         alt="Shinra Building">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Shinra Building</h5>
@@ -1926,7 +1854,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Mythril_Mine_(Final_Fantasy_VII)"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-mythril.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-mythril.jpg"
+                                         alt="Mythril Mine">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mythril Mine</h5>
@@ -1936,7 +1865,8 @@
                             <a href="https://finalfantasy.fandom.com/wiki/Temple_of_the_Ancients" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dung-temple.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dung-temple.jpg"
+                                         alt="Temple of the Ancients">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Temple of the Ancients</h5>
@@ -1958,7 +1888,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/cloud-strife/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-cloud-strife.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-cloud-strife.jpg"
+                                         alt="Cloud Strife">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Cloud Strife</h5>
@@ -1968,7 +1899,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/aerith-gainsborough/"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-aerith-gainsborough.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-aerith-gainsborough.jpg"
+                                         alt="Aerith Gainsborough">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Aerith Gainsborough</h5>
@@ -1978,7 +1910,8 @@
                             <a href="hhttps://www.finalfantasyunion.com/characters/tifa-lockhart/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-tifa-lockhart.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-tifa-lockhart.jpg"
+                                         alt="Tifa Lockhart">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Tifa Lockhart</h5>
@@ -1988,7 +1921,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/barret-wallace/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-barret-wallace.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-barret-wallace.jpg"
+                                         alt="Barrace Wallace">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Barret Wallace</h5>
@@ -1998,7 +1932,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/cid-highwind/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-cid-highwind.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-cid-highwind.jpg"
+                                         alt="Cid Highwind">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Cid Highwind</h5>
@@ -2008,7 +1943,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/red-xiii/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-red-xiii.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-red-xiii.jpg" alt="Red XIII">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Red XIII</h5>
@@ -2018,7 +1953,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/cait-sith/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-cait-sith.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-cait-sith.jpg"
+                                         alt="Cait Sith">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Cait Sith</h5>
@@ -2028,7 +1964,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/yuffie-kisaragi/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-yuffie-kisaragi.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-yuffie-kisaragi.jpg"
+                                         alt="Yuffie Kisaragi">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Yuffie Kisaragi</h5>
@@ -2038,7 +1975,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/vincent-valentine/"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-vincent-valentine.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-vincent-valentine.jpg"
+                                         alt="Vincent Valentine">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Vincent Valentine</h5>
@@ -2059,7 +1997,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/sephiroth/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-sephiroth.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-sephiroth.jpg"
+                                         alt="Sephirot">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Sephiroth</h5>
@@ -2069,7 +2008,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/jenova/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-jenova.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-jenova.jpg" alt="Jenova">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">JENOVA</h5>
@@ -2079,7 +2018,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/professor-hojo/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-professor-hojo.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-professor-hojo.jpg"
+                                         alt="Professor Hojo">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Professor Hojo</h5>
@@ -2089,7 +2029,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/elena/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-elena.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-elena.jpg" alt="Elena">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Elena</h5>
@@ -2099,7 +2039,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/president-shinra/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-president-shinra.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-president-shinra.jpg"
+                                         alt="President Shinra">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">President Shinra</h5>
@@ -2109,7 +2050,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/rufus-shinra/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-rufus-shinra.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-rufus-shinra.jpg"
+                                         alt="Rufus Shinra">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Rufus Shinra</h5>
@@ -2119,7 +2061,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/tseng/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-tseng.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-tseng.jpg" alt="Tseng">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Tseng</h5>
@@ -2129,7 +2071,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/reno/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-reno.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-reno.jpg" alt="Reno">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Reno</h5>
@@ -2139,7 +2081,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/rude/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-rude.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-rude.jpg" alt="Rude">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Rude</h5>
@@ -2160,7 +2102,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/reeve-tuesti/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-reeve-tuesti.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-reeve-tuesti.jpg"
+                                         alt="Reeve Tuesti">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Reeve Tuesti</h5>
@@ -2170,7 +2113,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/scarlet/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-scarlet.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-scarlet.jpg" alt="Scarlet">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Scarlet</h5>
@@ -2180,7 +2123,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/heidegger/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-heidegger.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-heidegger.jpg"
+                                         alt="Heidegger">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Heidegger</h5>
@@ -2190,7 +2134,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/palmer/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-palmer.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-palmer.jpg" alt="Palmer">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Palmer</h5>
@@ -2200,7 +2144,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/lucrecia-crescent/"
                                target="_blank" class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-lucrecia-crescent.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-lucrecia-crescent.jpg"
+                                         alt="Lucrecia Crescent">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Lucrecia Crescent</h5>
@@ -2210,7 +2155,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/professor-gast/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-professor-gast.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-professor-gast.jpg"
+                                         alt="Professor Gast">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Professor Gast</h5>
@@ -2220,7 +2166,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/mayor-domino/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-mayor-domino.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-mayor-domino.jpg"
+                                         alt="Mayor Domino">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Mayor Domino</h5>
@@ -2230,7 +2177,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/zack-fair/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-zack-fair.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-zack-fair.jpg"
+                                         alt="Zack Fair">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Zack Fair</h5>
@@ -2240,7 +2188,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/sapphire-weapon/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-sapphire-weapon.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-sapphire-weapon.jpg"
+                                         alt="Sapphire Weapon">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Sapphire Weapon</h5>
@@ -2261,7 +2210,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/bugenhagen/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-bugenhagen.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-bugenhagen.jpg"
+                                         alt="Bugenhagen">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Bugenhagen</h5>
@@ -2271,7 +2221,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/chocobo-sage/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-chocobo-sage.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-chocobo-sage.jpg"
+                                         alt="Chocobo Sage">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Chocobo Sage</h5>
@@ -2281,7 +2232,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/dio/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dio.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dio.jpg" alt="Dio">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Dio</h5>
@@ -2291,7 +2242,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/don-corneo/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-don-corneo.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-don-corneo.jpg"
+                                         alt="Don Corneo">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Don Corneo</h5>
@@ -2301,7 +2253,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/dyne/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-dyne.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-dyne.jpg" alt="Dyne">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Dyne</h5>
@@ -2311,7 +2263,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/ester/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-ester.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-ester.jpg" alt="Ester">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Ester</h5>
@@ -2321,7 +2273,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/godo-kisaragi/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-godo-kisaragi.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-godo-kisaragi.jpg"
+                                         alt="Godo Kisaragi">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Godo Kisaragi</h5>
@@ -2331,7 +2284,8 @@
                             <a href="https://www.finalfantasyunion.com/characters/marlene-wallace/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-marlene-wallace.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-marlene-wallace.jpg"
+                                         alt="Marlene Wallace">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Marlene Wallace</h5>
@@ -2341,7 +2295,7 @@
                             <a href="https://www.finalfantasyunion.com/characters/zangan/" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/ff7-zangan.jpg">
+                                    <img class="card-subject-image" src="assets/images/ff7-zangan.jpg" alt="Zangan">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Zangan</h5>
@@ -2363,7 +2317,8 @@
                             <a href="https://www.youtube.com/watch?v=oVcjuJRSgVQ" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Prelude - Reunion</h5>
@@ -2373,7 +2328,8 @@
                             <a href="https://www.youtube.com/watch?v=p3jkXBqg9_k" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Tifa's Theme - Seventh Heaven</h5>
@@ -2383,7 +2339,8 @@
                             <a href="https://www.youtube.com/watch?v=p5N0jo_pJN8" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Main Theme of FFVII - Sector 7 Undercity</h5>
@@ -2393,7 +2350,8 @@
                             <a href="https://www.youtube.com/watch?v=oVcjuJRSgVQ" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Prelude - Reunion</h5>
@@ -2414,7 +2372,8 @@
                             <a href="https://www.youtube.com/watch?v=YM1-oniaYnc" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Jessie's Theme</h5>
@@ -2424,7 +2383,8 @@
                             <a href="https://www.youtube.com/watch?v=cdxKqHbsdyk" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Main Theme of FFVII - Nightfall in the
@@ -2435,7 +2395,8 @@
                             <a href="https://www.youtube.com/watch?v=OwK1sDqvd70" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Whispers' Theme</h5>
@@ -2445,7 +2406,8 @@
                             <a href="https://www.youtube.com/watch?v=3rEzFkNbWEw" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Star of Seventh Heaven</h5>
@@ -2466,7 +2428,8 @@
                             <a href="https://www.youtube.com/watch?v=lhb2ePyiIB4" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Flowers Blooming in the Church</h5>
@@ -2476,7 +2439,8 @@
                             <a href="https://www.youtube.com/watch?v=GRurDi9MA_8" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Aerith's Theme - Home Again</h5>
@@ -2486,7 +2450,8 @@
                             <a href="https://www.youtube.com/watch?v=YCxeP-M1rro" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Undercity Suns</h5>
@@ -2496,7 +2461,8 @@
                             <a href="https://www.youtube.com/watch?v=UECVhMkVFYk" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Turks' Theme</h5>
@@ -2517,7 +2483,8 @@
                             <a href="https://www.youtube.com/watch?v=IF6jz-A9fsc" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">The Oppressed - Beck's Badasses</h5>
@@ -2527,7 +2494,8 @@
                             <a href="https://www.youtube.com/watch?v=FBGZWpcAPSQ" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Wall Market - The Town That Never Sleeps</h5>
@@ -2537,7 +2505,8 @@
                             <a href="https://www.youtube.com/watch?v=0hB1OyOEak8" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Wall Market - Chocobo Sam</h5>
@@ -2547,7 +2516,8 @@
                             <a href="https://www.youtube.com/watch?v=yUjtjkgALFA" target="_blank"
                                class="card-subject">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg">
+                                    <img class="card-subject-image" src="assets/images/Disk-1.jpg"
+                                         alt="Music album cover">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">Funk with Me</h5>
@@ -2567,49 +2537,68 @@
                         </div>
                         <div class="row resource-cards">
                             <div class="col-12 section-column">
-                                <div class="resourcemain">
+                                <div class="resourceMain">
 
-                                    <div class="resourceheader">
-                                        <h2 class="resourceheader h2">
+                                    <div class="resourceHeader">
+                                        <h2 class="resourceHeaderH2">
                                             Final Fantasy XV
                                         </h2>
                                     </div>
-                                    <div class="resourcebody">
+                                    <div class="resourceBody">
                                         <p>Final Fantasy XV is an action role-playing game developed and published by
-                                        Square Enix as part of the Final Fantasy series. It was released for the
-                                        PlayStation 4 and Xbox One in 2016, Microsoft Windows in 2018, and Stadia as a
-                                        launch title in 2019. The game features an open world environment and
-                                        action-based battle system, incorporating quick-switching weapons, elemental
-                                        magic, and other features such as vehicle travel and camping. The base campaign
-                                        was later expanded with downloadable content (DLC), adding further gameplay
+                                            Square Enix as part of the Final Fantasy series. It was released for the
+                                            PlayStation 4 and Xbox One in 2016, Microsoft Windows in 2018, and Stadia as
+                                            a
+                                            launch title in 2019. The game features an open world environment and
+                                            action-based battle system, incorporating quick-switching weapons, elemental
+                                            magic, and other features such as vehicle travel and camping. The base
+                                            campaign
+                                            was later expanded with downloadable content (DLC), adding further gameplay
                                             options such as additional playable characters and multiplayer.</p>
 
-                                        <p>Final Fantasy XV takes place on the fictional world of Eos; aside from Insomnia,
-                                        the capital of Lucis, all the world is dominated by the empire of Niflheim, who
-                                        seek control of the magical Crystal protected by the Lucian royal family. On the
-                                        eve of peace negotiations, Niflheim attacks the capital and steals the Crystal.
-                                        Noctis Lucis Caelum, heir to the Lucian throne, goes on a quest to rescue the
-                                        Crystal and defeat Niflheim. He later learns his full role as the "True King",
-                                        destined to use the Crystal's powers to save Eos from eternal darkness. The game
-                                        shares a thematic connection with Fabula Nova Crystallis Final Fantasy, a
-                                        subseries of games linked by a common mythos which includes Final Fantasy XIII
+                                        <p>Final Fantasy XV takes place on the fictional world of Eos; aside from
+                                            Insomnia,
+                                            the capital of Lucis, all the world is dominated by the empire of Niflheim,
+                                            who
+                                            seek control of the magical Crystal protected by the Lucian royal family. On
+                                            the
+                                            eve of peace negotiations, Niflheim attacks the capital and steals the
+                                            Crystal.
+                                            Noctis Lucis Caelum, heir to the Lucian throne, goes on a quest to rescue
+                                            the
+                                            Crystal and defeat Niflheim. He later learns his full role as the "True
+                                            King",
+                                            destined to use the Crystal's powers to save Eos from eternal darkness. The
+                                            game
+                                            shares a thematic connection with Fabula Nova Crystallis Final Fantasy, a
+                                            subseries of games linked by a common mythos which includes Final Fantasy
+                                            XIII
                                             and Final Fantasy Type-0.</p>
 
                                         <p>The game's development began in 2006 as a PlayStation 3 spin-off titled Final
-                                        Fantasy Versus XIII. Tetsuya Nomura served as the original director and
-                                        character designer. After a development period of six years, it was changed to
-                                        the next mainline title in the series in 2012; Nomura was replaced as director
-                                        by Hajime Tabata, and the game shifted to eighth generation platforms. Due to
-                                        the changes, the story needed to be rewritten and some scenes and characters
-                                        were repurposed or removed. The setting of Final Fantasy XV was "a fantasy based
-                                            on reality", with locations and creatures based on elements from the real world.</p>
+                                            Fantasy Versus XIII. Tetsuya Nomura served as the original director and
+                                            character designer. After a development period of six years, it was changed
+                                            to
+                                            the next mainline title in the series in 2012; Nomura was replaced as
+                                            director
+                                            by Hajime Tabata, and the game shifted to eighth generation platforms. Due
+                                            to
+                                            the changes, the story needed to be rewritten and some scenes and characters
+                                            were repurposed or removed. The setting of Final Fantasy XV was "a fantasy
+                                            based
+                                            on reality", with locations and creatures based on elements from the real
+                                            world.</p>
 
                                         <p>To supplement the game, Square Enix created a multimedia project called the
-                                        "Final Fantasy XV Universe", which includes a few spin-off games, as well as an
-                                        anime series and feature film. Gameplay and story-based DLC was released between
-                                        2017 and 2019. Upon release, Final Fantasy XV was well received by journalists.
-                                        Widespread praise was given for its gameplay, visuals, and emotional weight,
-                                        while reception towards its story and presentation was mixed. By October 2019,
+                                            "Final Fantasy XV Universe", which includes a few spin-off games, as well as
+                                            an
+                                            anime series and feature film. Gameplay and story-based DLC was released
+                                            between
+                                            2017 and 2019. Upon release, Final Fantasy XV was well received by
+                                            journalists.
+                                            Widespread praise was given for its gameplay, visuals, and emotional weight,
+                                            while reception towards its story and presentation was mixed. By October
+                                            2019,
                                             the game had sold over 8.9 million copies worldwide.</p>
 
                                     </div>
@@ -2630,7 +2619,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2651,7 +2640,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2672,7 +2661,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2681,8 +2670,6 @@
                             </a>
                         </div>
                     </div>
-
-
 
                     <!--FFXV CHARACTERS-->
                     <!--FFXV MAIN CHARACTERS-->
@@ -2696,7 +2683,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2717,7 +2704,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2738,7 +2725,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2759,7 +2746,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2781,7 +2768,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2802,7 +2789,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2823,7 +2810,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2844,7 +2831,7 @@
                             <a href="#"
                                target="_blank" class="card-subject" onclick="return false;">
                                 <div class="card-subject-image-container">
-                                    <img class="card-subject-image" src="assets/images/empty.png">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
                                 </div>
                                 <div class="card-subject-info">
                                     <h5 class="card-subject-title">No content (yet)</h5>
@@ -2854,8 +2841,192 @@
                         </div>
                     </div>
 
+                    <!--FF TACTICS INFO-->
+                    <!--FF TACTICS GENERAL-->
+                    <div class="resource-cards-container" id="tactics-finalFantasyTactics-general">
+                        <div class="resource-cards-banner">
+                            <h1 class="resource-cards-heading">General</h1>
+                            <a href=""><img alt="main-series Programme Badge" class="resource-cards-badge"
+                                            src="assets/images/ff-tactics-logo.png"></a>
+                        </div>
+                        <div class="row resource-cards">
+                            <div class="col-12 section-column">
+                                <div class="resourceMain">
 
+                                    <div class="resourceHeader">
+                                        <h2 class="resourceHeaderH2">
+                                            Final Fantasy Tactics
+                                        </h2>
+                                    </div>
+                                    <div class="resourceBody">
+                                        <p>Final Fantasy Tactics is a tactical role-playing game developed and
+                                            published by Squaresoft (later changed to Square and now Square Enix) for
+                                            the Sony PlayStation video game console. It is the first game of the Final
+                                            Fantasy Tactics series and was released in Japan in June 1997 and in the
+                                            United States in January 1998. The game combines thematic elements of the
+                                            Final Fantasy video game series with a game engine and battle system unlike
+                                            those previously seen in the franchise. In contrast to other 32-bit era
+                                            Final Fantasy titles, Final Fantasy Tactics uses a 3D, isometric, rotatable
+                                            playing field, with bitmap sprite characters.</p>
 
+                                        <p>Final Fantasy Tactics is set in a fictional medieval-inspired kingdom called
+                                            Ivalice, created by Yasumi Matsuno. The game's story follows Ramza Beoulve,
+                                            a highborn cadet who finds himself thrust into the middle of an intricate
+                                            military conflict known as The Lion War, where two opposing noble factions
+                                            are coveting the throne of the kingdom. As the story progresses, Ramza and
+                                            his allies discover a sinister plot behind the war.</p>
+
+                                        <p>The game received extremely positive reviews from gaming magazines and
+                                            websites and has become a cult classic since its release. It has been cited
+                                            as one of the greatest video games of all time.</p>
+
+                                        <p>A spin-off title, Final Fantasy Tactics Advance, was released for the
+                                            Nintendo Game Boy Advance in 2003 and a sequel to that title, Final Fantasy
+                                            Tactics A2: Grimoire of the Rift, was released in 2007 for the Nintendo DS.
+                                            Various other games have also utilized the Ivalice setting, including
+                                            Vagrant Story for the PlayStation and Final Fantasy XII for the PlayStation
+                                            2. An enhanced port of Final Fantasy Tactics, Final Fantasy Tactics: The War
+                                            of the Lions, was released in 2007 as part of Square Enix's Ivalice Alliance
+                                            project.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--FF TACTICS GAMEPLAY-->
+                    <div class="resource-cards-container" id="tactics-finalFantasyTactics-gameplay">
+                        <div class="resource-cards-banner">
+                            <h1 class="resource-cards-heading">Gameplay</h1>
+                            <a href=""><img alt="main-series Programme Badge" class="resource-cards-badge"
+                                            src="assets/images/ff-tactics-logo.png"></a>
+                        </div>
+                        <div class="row resource-cards">
+                            <a href="#"
+                               target="_blank" class="card-subject" onclick="return false;">
+                                <div class="card-subject-image-container">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
+                                </div>
+                                <div class="card-subject-info">
+                                    <h5 class="card-subject-title">No content (yet)</h5>
+                                    <div class="card-subject-count">Please visit later</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--FF TACTICS PLOT-->
+                    <div class="resource-cards-container" id="tactics-finalFantasyTactics-plot">
+                        <div class="resource-cards-banner">
+                            <h1 class="resource-cards-heading">Plot</h1>
+                            <a href=""><img alt="main-series Programme Badge" class="resource-cards-badge"
+                                            src="assets/images/ff-tactics-logo.png"></a>
+                        </div>
+                        <div class="row resource-cards">
+                            <a href="#"
+                               target="_blank" class="card-subject" onclick="return false;">
+                                <div class="card-subject-image-container">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
+                                </div>
+                                <div class="card-subject-info">
+                                    <h5 class="card-subject-title">No content (yet)</h5>
+                                    <div class="card-subject-count">Please visit later</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--FF TACTICS A2 INFO-->
+                    <!--FF TACTICS A2 GENERAL-->
+                    <div class="resource-cards-container" id="tactics-finalFantasyTacticsA2-general">
+                        <div class="resource-cards-banner">
+                            <h1 class="resource-cards-heading">General</h1>
+                            <a href=""><img alt="main-series Programme Badge" class="resource-cards-badge"
+                                            src="assets/images/ff-tactics-logo.png"></a>
+                        </div>
+                        <div class="row resource-cards">
+                            <div class="col-12 section-column">
+                                <div class="resourceMain">
+
+                                    <div class="resourceHeader">
+                                        <h2 class="resourceHeaderH2">
+                                            Final Fantasy Tactics A2
+                                        </h2>
+                                    </div>
+                                    <div class="resourceBody">
+                                        <p>Final Fantasy Tactics A2: Grimoire of the Rift is a tactical role-playing
+                                        game developed and published by Square Enix for the Nintendo DS handheld game
+                                        console. Releasing in 2007 in Japan and 2008 in the West, the game is a sequel
+                                        to Final Fantasy Tactics Advance and forms part of the Ivalice Alliance, a group
+                                        of games set in the titular fictional universe. The game features cameo
+                                        appearances from central and supporting characters from Final Fantasy XII, a
+                                            title set in Ivalice.</p>
+
+                                        <p>Tactics A2 follows a young man named Luso Clemens after he is transported
+                                        through a magical book to the world of Ivalice. Rescued from monsters by a clan
+                                        leader named Cid and later joined by the thief Adelle, Luso becomes involved in
+                                        battles between rival clans as he seeks a way home. Gameplay carries over
+                                        mechanics from Tactics Advance including turn-based combat on a grid, a themed
+                                        Job system, and a "Law" system placing limitations on player action during
+                                            battles.</p>
+
+                                        <p>Originally planned for Game Boy Advance prior to the DS's worldwide commercial
+                                        success, the project began development in 2006 with the aim of expanding on the
+                                        elements of Tactics Advance. Director Yuichi Murasawa, artist Ryoma Ito, and
+                                        composer Hitoshi Sakimoto all returned from Tactics Advance. The English
+                                        translation was done by Alexander O. Smith and Joseph Reeder, who had worked on
+                                        Final Fantasy XII and Vagrant Story. It received generally positive reviews, and
+                                        went on to sell 670,000 units worldwide. Elements from the game were later used
+                                            in mobile titles set in Ivalice.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--FF TACTICS A2 GAMEPLAY-->
+                    <div class="resource-cards-container" id="tactics-finalFantasyTacticsA2-gameplay">
+                        <div class="resource-cards-banner">
+                            <h1 class="resource-cards-heading">Gameplay</h1>
+                            <a href=""><img alt="main-series Programme Badge" class="resource-cards-badge"
+                                            src="assets/images/ff-tactics-logo.png"></a>
+                        </div>
+                        <div class="row resource-cards">
+                            <a href="#"
+                               target="_blank" class="card-subject" onclick="return false;">
+                                <div class="card-subject-image-container">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
+                                </div>
+                                <div class="card-subject-info">
+                                    <h5 class="card-subject-title">No content (yet)</h5>
+                                    <div class="card-subject-count">Please visit later</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--FF TACTICS A2 PLOT-->
+                    <div class="resource-cards-container" id="tactics-finalFantasyTacticsA2-plot">
+                        <div class="resource-cards-banner">
+                            <h1 class="resource-cards-heading">Plot</h1>
+                            <a href=""><img alt="main-series Programme Badge" class="resource-cards-badge"
+                                            src="assets/images/ff-tactics-logo.png"></a>
+                        </div>
+                        <div class="row resource-cards">
+                            <a href="#"
+                               target="_blank" class="card-subject" onclick="return false;">
+                                <div class="card-subject-image-container">
+                                    <img class="card-subject-image" src="assets/images/empty.png" alt="Empty Image">
+                                </div>
+                                <div class="card-subject-info">
+                                    <h5 class="card-subject-title">No content (yet)</h5>
+                                    <div class="card-subject-count">Please visit later</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -2869,8 +3040,6 @@
 
 </div>
 
-
-</body>
 <script crossorigin="anonymous"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -2883,5 +3052,7 @@
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/search.js"></script>
 <script src="assets/js/resources.js"></script>
+
+</body>
 </html>
 

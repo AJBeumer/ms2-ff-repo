@@ -1,4 +1,4 @@
-//Program Selection
+//PROGRAM SELECTION
 let tacticsResourcePath = [document.querySelector(".tactics-resource-menu-main")];
 let spinOffsResourcePath = [document.querySelector(".spin-offs-resource-menu-main")];
 let mainSeriesResourcePath = [document.querySelector(".main-series-resource-menu-main")];
@@ -7,6 +7,7 @@ let resourcePath;
 changeProgram("main-series", false);
 
 function changeProgram(programSelection, toggle) {
+    // PROGRAM VARIABLES
     let programButton = document.querySelector(".program-select");
     let primaryColor = document.querySelector(".custom-bg-primary");
     let selectedColor = document.querySelector(".custom-bg-primary-selected");
@@ -22,10 +23,12 @@ function changeProgram(programSelection, toggle) {
 
     resourcePath = programSelection;
 
+    /*Everytime a user selects this program the colors will change and the other proramme-selection content will be hidden*/
+    //TACTICS PROGRAM SELECTION
     if(programSelection === "tactics") {
         currentResourcePath = tacticsResourcePath;
         primaryColor.style.background = tacticsBackground;
-        selectedColor.style.backgroundColor = "rgba(255, 208, 0, 0.5)";
+        selectedColor.style.backgroundColor = "rgba(240, 81, 51, 0.5)";
         document.getElementById("footerColor").style.background = tacticsBackground;
         programButton.textContent = "Final Fantasy / Tactics";
         programDropdown[0].textContent = "Final Fantasy / Tactics";
@@ -48,11 +51,11 @@ function changeProgram(programSelection, toggle) {
         document.querySelector("#tactics-subject-main").style.display = "block";
         document.querySelector("#main-series-subject-main").style.display = "none";
 
+        //SPIN OFFS PROGRAM SELECTION
     } else if(programSelection === "spin-offs") {
         currentResourcePath = spinOffsResourcePath;
         primaryColor.style.background = spinOffBackground;
-        selectedColor.style.backgroundColor = "rgba(240, 81, 51, 0.5)";
-
+        selectedColor.style.backgroundColor = "rgba(81,0,255,0.5)";
         document.getElementById("footerColor").style.background = spinOffBackground;
         programButton.textContent = "Final Fantasy / Spin-offs";
         programDropdown[0].textContent = "Final Fantasy / Spin-offs";
@@ -76,6 +79,7 @@ function changeProgram(programSelection, toggle) {
         document.querySelector("#main-series-subject-main").style.display = "none";
         document.querySelector("#spin-offs-subject-main").style.display = "block";
 
+        /*MAIN SERIES PROGRAM SELECTION*/
     } else if(programSelection === "main-series") {
         currentResourcePath = mainSeriesResourcePath;
         primaryColor.style.background = mainSeriesBackground;
@@ -103,12 +107,12 @@ function changeProgram(programSelection, toggle) {
 
     }
 
-    if(toggle == null) {
+    /*if(toggle == null) {
         $(programButton).click();
-    }
+    }*/
 }
 
-//Mobile Resource Navigation Menu
+//MOBILE RESOURCE NAVIGATION MENU
 function toggleMobileResourceNavigation() {
     let nav = document.querySelector(".nav-container");
     document.querySelector(".mobile-nav-slice").classList.toggle("mobile-nav-slice-display");
@@ -116,7 +120,7 @@ function toggleMobileResourceNavigation() {
     nav.classList.toggle("nav-open");
 }
 
-//Resource Navigation
+//RESOURCE NAVIGATION
 let menuContainer = document.querySelector(".nav-container");
 function openResourceMenu(currentMenu, newMenu) {
 
@@ -176,7 +180,7 @@ function openResourceCardList(cardList) {
     toggleMobileResourceNavigation();
 }
 
-
+// OVERFLOW, IF MENU HOTS CERTAIN OFFSET SCROLLBAR IS SHOWN
 
 function checkOverflow(newMenu) {
     if(menuContainer.offsetHeight < newMenu.scrollHeight) {
