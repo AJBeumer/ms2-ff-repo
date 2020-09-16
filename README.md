@@ -8,7 +8,7 @@ Interactive Frontend Development - Milestone Project 2 - Final Fantasy wiki - Aa
 <img src="assets/images/readme/front-page.PNG" width=420 alt="AJ Beumer">
 </h1>
 <br>
-For Milestone Project 2 I created a wiki like web-application, [with a custom build JavaScript navigation](assets/js/resources.js), to create a portal for all the info (wip) you can find for the Final Fantasy games.
+For Milestone Project 2 I created a wiki like web-application, <a href ="assets/js/resources.js">with a custom build JavaScript navigation</a>, to create a portal for all the info (wip) you can find for the Final Fantasy games.
 <br>
 <br>
 
